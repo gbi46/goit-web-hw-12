@@ -1,0 +1,20 @@
+[project]
+name = "goit-web-hw-12"
+version = "0.1.1"
+description = "Python REST API app"
+authors = [
+    {name = "Ivan",email = "vank300828@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "python-jose[cryptography] (>=3.3.0,<4.0.0)",
+    "passlib[bcrypt] (>=1.7.4,<2.0.0)",
+    "python-multipart (>=0.0.20,<0.0.21)",
+    "fastapi-users (>=14.0.1,<15.0.0)",
+    "libgravatar (>=1.0.4,<2.0.0)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

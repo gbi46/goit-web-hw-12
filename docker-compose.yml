@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres-container3
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 567234
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  python-app:
+    build: .
+    depends_on:
+      - postgres
+    networks:
+      - mynetwork
+    environment:
+      DATABASE_URL: postgres://postgres:567234@postgres:5432/contacts_db
+networks:
+  mynetwork:
+    driver: bridge
+volumes:
+  postgres_data:
